@@ -15,6 +15,22 @@ public class LinkedList<T> {
             head = newNode;
         }
     }
+   
+    // Method to insert Data in between
+    public void insert(T data) {
+		Node<T> newNode = new Node<>(data);
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+		} else {
+			Node<T> temp, current;
+			current = head;
+			temp = head.next;
+			current.next = newNode;
+			newNode.next = temp;
+		}
+	}
+
  
     // Method to Add in the List
     public void add(T data) {
