@@ -32,15 +32,41 @@ public class LinkedList<T> {
 	}
 
  
-    // Method to Delete First Element
+    // Method to Delete Last Element
     public T popFirst() {
         if (head == null) {
-            return null;
-        } else {
-            T data = head.data;
-            head = head.next;
-            return data;
-        }
+			return null;
+		} else {
+			T data = head.data;
+			head = head.next;
+			return data;
+		}
+	}
+
+    
+	public void add(T data) {
+		Node<T> newNode = new Node<>(data);
+		if (head == null) {
+			head = newNode;
+		} else {
+			tail.next = newNode;
+		}
+		tail = newNode;
+	}
+
+	public T popLast() {
+		if (head == null) {
+			return null;
+		} else {
+			Node<T> temp = head;
+			while (temp.next != tail) {
+				temp = temp.next;
+			}
+			T data = tail.data;
+			temp.next = null;
+			tail = temp;
+			return data;
+		}
 	}
 
     // Method to Display
