@@ -53,6 +53,19 @@ public class LinkedList<T> {
 		}
 		tail = newNode;
 	}
+    
+    // Method to search
+    public Node<T> search(T searchData) {
+		Node<T> temp = head;
+		while (temp != null) {
+			if (temp.data.equals(searchData)) {
+				return temp;
+			}
+			temp = temp.next;
+		}
+		return null;
+	}
+
 
 	public T popLast() {
 		if (head == null) {

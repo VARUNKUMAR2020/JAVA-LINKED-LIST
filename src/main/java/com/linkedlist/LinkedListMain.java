@@ -15,6 +15,12 @@ public class LinkedListMain {
 			System.out.println("Popped the last element -> " + popLastElement);
 		}
 		listOne.show();
+        if (listOne.search(30) == null) {
+			System.out.println("\nElement not  found");
+		} else {
+			System.out.println("\nElement found");
+		}
+
       
     }
 }
