@@ -7,6 +7,13 @@ public class Queue {
         queue.add(data);
     }
 
+    public void dequeue() {
+        while (queue.size() != 0) {
+            queue.show();
+            queue.popFirst();
+        }
+    }
+
     public void show() {
         queue.show();
     }
@@ -17,5 +24,6 @@ public class Queue {
         queue.enqueue(30);
         queue.enqueue(70);
         queue.show();
+        queue.dequeue();
     }
 }
