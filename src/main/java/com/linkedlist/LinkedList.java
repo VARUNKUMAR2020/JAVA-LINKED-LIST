@@ -64,8 +64,22 @@ public class LinkedList<T> {
 			temp = temp.next;
 		}
 		return null;
-	}
+	}  
 
+    // Insert Element at certain Condition
+    public boolean searchAndInsert(T searchData, T insertData) {
+		Node<T> newNode = new Node<>(insertData);
+		Node<T> searchNode = search(searchData);
+		if (searchNode == null) {
+			return false;
+		} else {
+			Node<T> temp;
+			temp = tail;
+			searchNode.next = newNode;
+			newNode.next = temp;
+			return true;
+		}
+	}
 
 	public T popLast() {
 		if (head == null) {

@@ -8,18 +8,16 @@ public class LinkedListMain {
         listOne.push(70);
         listOne.add(30);
 		listOne.show();
-		Integer popLastElement = listOne.popLast();
-		if (popLastElement == null) {
-			System.out.println("Linked List Empty");
-		} else {
-			System.out.println("Popped the last element -> " + popLastElement);
-		}
-		listOne.show();
         if (listOne.search(30) == null) {
-			System.out.println("\nElement not  found");
+			System.out.println("Element not  found");
 		} else {
-			System.out.println("\nElement found");
+			System.out.println("Element found");
 		}
+        if (!listOne.searchAndInsert(30, 40)) {
+			System.out.println("Element not  found");
+		} else {
+			System.out.println("Element found and inserted");
+        }
 
       
     }
