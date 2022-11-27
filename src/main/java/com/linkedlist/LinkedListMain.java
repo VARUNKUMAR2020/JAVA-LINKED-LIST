@@ -8,6 +8,13 @@ public class LinkedListMain {
         listOne.push(56);
         listOne.insert(30);
         listOne.show();
+        Integer popFirstElement = listOne.popFirst();
+		if (popFirstElement == null) {
+			System.out.println("Linked List Empty");
+		} else {
+			System.out.println("Popped the first element -> " + popFirstElement);
+		}
+		listOne.show();
       
     }
 }

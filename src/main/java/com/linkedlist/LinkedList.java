@@ -32,15 +32,15 @@ public class LinkedList<T> {
 	}
 
  
-    // Method to Add in the List
-    public void add(T data) {
-		Node<T> newNode = new Node<>(data);
-		if (head == null) {
-			head = newNode;
-		} else {
-			tail.next = newNode;
-		}
-		tail = newNode;
+    // Method to Delete First Element
+    public T popFirst() {
+        if (head == null) {
+            return null;
+        } else {
+            T data = head.data;
+            head = head.next;
+            return data;
+        }
 	}
 
     // Method to Display
