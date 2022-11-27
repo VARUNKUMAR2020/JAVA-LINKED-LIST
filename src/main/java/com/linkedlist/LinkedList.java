@@ -1,9 +1,30 @@
 package com.linkedlist;
 
-public class LinkedList 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Linked List" );
+public class LinkedList<T> {
+    Node<T> head;
+    Node<T> tail;
+
+    public void push(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+
+    public void show() {
+        if (head == null) {
+            System.out.println("Linked list is Empty");
+        } else {
+            Node<T> temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
     }
 }
