@@ -3,7 +3,8 @@ package com.linkedlist;
 public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
-
+  
+    // Method to Push the Data
     public void push(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -14,7 +15,19 @@ public class LinkedList<T> {
             head = newNode;
         }
     }
+ 
+    // Method to Add in the List
+    public void add(T data) {
+		Node<T> newNode = new Node<>(data);
+		if (head == null) {
+			head = newNode;
+		} else {
+			tail.next = newNode;
+		}
+		tail = newNode;
+	}
 
+    // Method to Display
     public void show() {
         if (head == null) {
             System.out.println("Linked list is Empty");
