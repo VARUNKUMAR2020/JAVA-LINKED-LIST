@@ -1,11 +1,29 @@
 package com.linkedlist;
 
-public class Stack {
+public class Stack<T> {
+    LinkedList<Integer> stack = new LinkedList<>();
+
+    public void push(Integer data) {
+        stack.add(data);
+    }
+
+    public void popAll() {
+        while (stack.size() != 0) {
+            stack.show();
+            stack.popFirst();
+        }
+    }
+
+    public void show() {
+        stack.show();
+    }
+
     public static void main(String[] args) {
-        LinkedList<Integer> stack = new LinkedList<>();
-		stack.push(70);
-		stack.push(30);
-		stack.push(56);
-		stack.show();  
+        Stack stack1 = new Stack();
+        stack1.push(70);
+        stack1.push(30);
+        stack1.push(56);
+        stack1.show();
+        stack1.popAll();
     }
 }
